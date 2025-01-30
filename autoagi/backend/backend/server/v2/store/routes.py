@@ -35,7 +35,7 @@ router = fastapi.APIRouter()
 async def get_profile(
     user_id: typing.Annotated[
         str, fastapi.Depends(autoagi_libs.auth.depends.get_user_id)
-    ]
+    ],
 ):
     """
     Get the profile details for the authenticated user.
@@ -334,7 +334,7 @@ async def get_creator(
 async def get_my_agents(
     user_id: typing.Annotated[
         str, fastapi.Depends(autoagi_libs.auth.depends.get_user_id)
-    ]
+    ],
 ):
     try:
         agents = await backend.server.v2.store.db.get_my_agents(user_id)

@@ -115,7 +115,12 @@ class CodeExecutionBlock(Block):
                 ("stdout_logs", "Hello World\n"),
             ],
             test_mock={
-                "execute_code": lambda code, language, setup_commands, timeout, api_key, template_id: (
+                "execute_code": lambda code,
+                language,
+                setup_commands,
+                timeout,
+                api_key,
+                template_id: (
                     "Hello World",
                     "Hello World\n",
                     "",
@@ -269,7 +274,12 @@ class InstantiationBlock(Block):
                 ("stdout_logs", "Hello World\n"),
             ],
             test_mock={
-                "execute_code": lambda setup_code, language, setup_commands, timeout, api_key, template_id: (
+                "execute_code": lambda setup_code,
+                language,
+                setup_commands,
+                timeout,
+                api_key,
+                template_id: (
                     "sandbox_id",
                     "Hello World",
                     "Hello World\n",

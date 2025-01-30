@@ -133,16 +133,12 @@ class TwitterGetQuoteTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": tweet_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "exclude": None if exclude == TweetExcludesFilter() else exclude,
             "user_auth": False,
         }

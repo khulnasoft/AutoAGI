@@ -28,7 +28,7 @@ integration_creds_manager = (
 async def get_library_agents(
     user_id: typing.Annotated[
         str, fastapi.Depends(autoagi_libs.auth.depends.get_user_id)
-    ]
+    ],
 ) -> typing.Sequence[backend.server.v2.library.model.LibraryAgent]:
     """
     Get all agents in the user's library, including both created and saved agents.

@@ -62,8 +62,7 @@ docs_url = (
 app = fastapi.FastAPI(
     title="AutoAGI Agent Server",
     description=(
-        "This server is used to execute agents that are created by the "
-        "AutoAGI system."
+        "This server is used to execute agents that are created by the AutoAGI system."
     ),
     summary="AutoAGI Agent Server",
     version="0.1",

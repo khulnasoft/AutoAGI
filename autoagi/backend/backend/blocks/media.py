@@ -12,7 +12,6 @@ from backend.util.file import MediaFile, get_exec_file_path, store_media_file
 
 
 class MediaDurationBlock(Block):
-
     class Input(BlockSchema):
         media_in: MediaFile = SchemaField(
             description="Media input (URL, data URI, or local path)."

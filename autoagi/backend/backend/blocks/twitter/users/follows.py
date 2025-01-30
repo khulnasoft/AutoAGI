@@ -68,9 +68,7 @@ class TwitterUnfollowUserBlock(Block):
 
     @staticmethod
     def unfollow_user(credentials: TwitterCredentials, target_user_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.unfollow_user(target_user_id=target_user_id, user_auth=False)
 
@@ -133,9 +131,7 @@ class TwitterFollowUserBlock(Block):
 
     @staticmethod
     def follow_user(credentials: TwitterCredentials, target_user_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.follow_user(target_user_id=target_user_id, user_auth=False)
 
@@ -242,16 +238,12 @@ class TwitterGetFollowersBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": target_user_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 
@@ -411,16 +403,12 @@ class TwitterGetFollowingBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": target_user_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 

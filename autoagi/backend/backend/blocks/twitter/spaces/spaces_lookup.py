@@ -143,9 +143,7 @@ class TwitterGetSpacesBlock(Block):
         space_fields: SpaceFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "ids": (
@@ -287,9 +285,7 @@ class TwitterGetSpaceByIdBlock(Block):
         space_fields: SpaceFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": space_id,
@@ -310,8 +306,7 @@ class TwitterGetSpaceByIdBlock(Block):
             for key, value in response.includes.items():
                 if isinstance(value, list):
                     includes[key] = [
-                        item.data if hasattr(item, "data") else item
-                        for item in value
+                        item.data if hasattr(item, "data") else item for item in value
                     ]
                 else:
                     includes[key] = value.data if hasattr(value, "data") else value
@@ -321,8 +316,7 @@ class TwitterGetSpaceByIdBlock(Block):
             for key, value in response.data.items():
                 if isinstance(value, list):
                     data[key] = [
-                        item.data if hasattr(item, "data") else item
-                        for item in value
+                        item.data if hasattr(item, "data") else item for item in value
                     ]
                 else:
                     data[key] = value.data if hasattr(value, "data") else value
@@ -435,9 +429,7 @@ class TwitterGetSpaceBuyersBlock(Block):
         expansions: UserExpansionsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": space_id,
@@ -566,9 +558,7 @@ class TwitterGetSpaceTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": space_id,

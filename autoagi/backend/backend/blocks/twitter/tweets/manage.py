@@ -439,9 +439,7 @@ class TwitterSearchRecentTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         # Building common params
         params = (

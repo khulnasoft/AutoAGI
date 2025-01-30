@@ -35,7 +35,6 @@ class LinearClient:
         if custom_requests:
             self._requests = custom_requests
         else:
-
             headers: Dict[str, str] = {
                 "Content-Type": "application/json",
             }
@@ -68,7 +67,6 @@ class LinearClient:
         response = self._requests.post(self.API_URL, json=payload)
 
         if not response.ok:
-
             try:
                 error_data = response.json()
                 error_message = error_data.get("errors", [{}])[0].get("message", "")
@@ -82,7 +80,6 @@ class LinearClient:
 
         response_data = response.json()
         if "errors" in response_data:
-
             error_messages = [
                 error.get("message", "") for error in response_data["errors"]
             ]

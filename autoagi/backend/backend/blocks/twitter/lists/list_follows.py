@@ -54,9 +54,7 @@ class TwitterUnfollowListBlock(Block):
 
     @staticmethod
     def unfollow_list(credentials: TwitterCredentials, list_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.unfollow_list(list_id=list_id, user_auth=False)
 
@@ -112,9 +110,7 @@ class TwitterFollowListBlock(Block):
 
     @staticmethod
     def follow_list(credentials: TwitterCredentials, list_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.follow_list(list_id=list_id, user_auth=False)
 

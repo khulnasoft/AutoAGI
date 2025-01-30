@@ -68,9 +68,7 @@ class TwitterRetweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.retweet(
             tweet_id=tweet_id,
@@ -140,9 +138,7 @@ class TwitterRemoveRetweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.unretweet(
             source_tweet_id=tweet_id,
@@ -268,16 +264,12 @@ class TwitterGetRetweetersBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": tweet_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 

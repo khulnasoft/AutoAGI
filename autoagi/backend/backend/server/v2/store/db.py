@@ -605,7 +605,7 @@ async def get_user_profile(
                 data=prisma.types.ProfileCreateInput(
                     userId=user_id,
                     name="No Profile Data",
-                    username=f"{random.choice(['happy', 'clever', 'swift', 'bright', 'wise'])}-{random.choice(['fox', 'wolf', 'bear', 'eagle', 'owl'])}_{random.randint(1000,9999)}".lower(),
+                    username=f"{random.choice(['happy', 'clever', 'swift', 'bright', 'wise'])}-{random.choice(['fox', 'wolf', 'bear', 'eagle', 'owl'])}_{random.randint(1000, 9999)}".lower(),
                     description="No Profile Data",
                     links=[],
                     avatarUrl="",

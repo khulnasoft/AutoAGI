@@ -124,10 +124,13 @@ class SendEmailBlock(Block):
     def run(
         self, input_data: Input, *, credentials: SMTPCredentials, **kwargs
     ) -> BlockOutput:
-        yield "status", self.send_email(
-            config=input_data.config,
-            to_email=input_data.to_email,
-            subject=input_data.subject,
-            body=input_data.body,
-            credentials=credentials,
+        yield (
+            "status",
+            self.send_email(
+                config=input_data.config,
+                to_email=input_data.to_email,
+                subject=input_data.subject,
+                body=input_data.body,
+                credentials=credentials,
+            ),
         )

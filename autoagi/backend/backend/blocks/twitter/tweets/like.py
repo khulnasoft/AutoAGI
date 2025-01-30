@@ -76,9 +76,7 @@ class TwitterLikeTweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.like(tweet_id=tweet_id, user_auth=False)
 
@@ -192,16 +190,12 @@ class TwitterGetLikingUsersBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": tweet_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 
@@ -385,16 +379,12 @@ class TwitterGetLikedTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "id": user_id,
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 
@@ -434,9 +424,7 @@ class TwitterGetLikedTweetsBlock(Block):
 
             if "users" in response.includes:
                 user_ids = [str(user["id"]) for user in response.includes["users"]]
-                user_names = [
-                    user["username"] for user in response.includes["users"]
-                ]
+                user_names = [user["username"] for user in response.includes["users"]]
 
             return (
                 tweet_ids,
@@ -535,9 +523,7 @@ class TwitterUnlikeTweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.unlike(tweet_id=tweet_id, user_auth=False)
 

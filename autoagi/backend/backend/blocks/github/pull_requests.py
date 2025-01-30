@@ -237,7 +237,8 @@ class GithubReadPullRequestBlock(Block):
                     "This is the body of the pull request.",
                     "username",
                 ),
-                "read_pr_changes": lambda *args, **kwargs: "List of changes made in the pull request.",
+                "read_pr_changes": lambda *args,
+                **kwargs: "List of changes made in the pull request.",
             },
         )
 
@@ -325,7 +326,8 @@ class GithubAssignPRReviewerBlock(Block):
             test_credentials=TEST_CREDENTIALS,
             test_output=[("status", "Reviewer assigned successfully")],
             test_mock={
-                "assign_reviewer": lambda *args, **kwargs: "Reviewer assigned successfully"
+                "assign_reviewer": lambda *args,
+                **kwargs: "Reviewer assigned successfully"
             },
         )
 
@@ -392,7 +394,8 @@ class GithubUnassignPRReviewerBlock(Block):
             test_credentials=TEST_CREDENTIALS,
             test_output=[("status", "Reviewer unassigned successfully")],
             test_mock={
-                "unassign_reviewer": lambda *args, **kwargs: "Reviewer unassigned successfully"
+                "unassign_reviewer": lambda *args,
+                **kwargs: "Reviewer unassigned successfully"
             },
         )
 

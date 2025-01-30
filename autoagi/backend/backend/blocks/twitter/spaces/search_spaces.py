@@ -117,9 +117,7 @@ class TwitterSearchSpacesBlock(Block):
         space_fields: SpaceFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {"query": query, "max_results": max_results, "state": state.value}
 

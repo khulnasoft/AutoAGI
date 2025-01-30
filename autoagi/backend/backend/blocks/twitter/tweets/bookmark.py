@@ -71,9 +71,7 @@ class TwitterBookmarkTweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.bookmark(tweet_id)
 
@@ -188,15 +186,11 @@ class TwitterGetBookmarkedTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
         }
 
         params = (
@@ -338,9 +332,7 @@ class TwitterRemoveBookmarkTweetBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.remove_bookmark(tweet_id)
 

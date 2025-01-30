@@ -30,7 +30,6 @@ class LinearOAuthHandler(BaseOAuthHandler):
     def get_login_url(
         self, scopes: list[str], state: str, code_challenge: Optional[str]
     ) -> str:
-
         params = {
             "client_id": self.client_id,
             "redirect_uri": self.redirect_uri,
@@ -133,12 +132,10 @@ class LinearOAuthHandler(BaseOAuthHandler):
         return new_credentials
 
     def _request_username(self, access_token: str) -> Optional[str]:
-
         # Use the LinearClient to fetch user details using GraphQL
         from backend.blocks.linear._api import LinearClient
 
         try:
-
             linear_client = LinearClient(
                 APIKeyCredentials(
                     api_key=SecretStr(access_token),
@@ -160,6 +157,5 @@ class LinearOAuthHandler(BaseOAuthHandler):
             return response["viewer"]["name"]
 
         except Exception as e:  # Handle any errors
-
             print(f"Error fetching username: {e}")
             return None

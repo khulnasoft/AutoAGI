@@ -162,11 +162,14 @@ class GetRedditPostsBlock(Block):
             if input_data.last_post and post.id == input_data.last_post:
                 break
 
-            yield "post", RedditPost(
-                id=post.id,
-                subreddit=input_data.subreddit,
-                title=post.title,
-                body=post.selftext,
+            yield (
+                "post",
+                RedditPost(
+                    id=post.id,
+                    subreddit=input_data.subreddit,
+                    title=post.title,
+                    body=post.selftext,
+                ),
             )
 
 

@@ -48,7 +48,7 @@ class DatabaseManager(AppService):
 
     @staticmethod
     def exposed_run_and_wait(
-        f: Callable[P, Coroutine[None, None, R]]
+        f: Callable[P, Coroutine[None, None, R]],
     ) -> Callable[Concatenate[object, P], R]:
         @expose
         @wraps(f)

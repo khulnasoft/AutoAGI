@@ -190,7 +190,9 @@ class SendDiscordMessageBlock(Block):
             },
             test_output=[("status", "Message sent")],
             test_mock={
-                "send_message": lambda token, channel_name, message_content: asyncio.Future()
+                "send_message": lambda token,
+                channel_name,
+                message_content: asyncio.Future()
             },
             test_credentials=TEST_CREDENTIALS,
         )

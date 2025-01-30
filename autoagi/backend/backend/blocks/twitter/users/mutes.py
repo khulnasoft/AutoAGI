@@ -68,9 +68,7 @@ class TwitterUnmuteUserBlock(Block):
 
     @staticmethod
     def unmute_user(credentials: TwitterCredentials, target_user_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.unmute(target_user_id=target_user_id, user_auth=False)
 
@@ -179,15 +177,11 @@ class TwitterGetMutedUsersBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {
             "max_results": max_results,
-            "pagination_token": (
-                None if pagination_token == "" else pagination_token
-            ),
+            "pagination_token": (None if pagination_token == "" else pagination_token),
             "user_auth": False,
         }
 
@@ -294,9 +288,7 @@ class TwitterMuteUserBlock(Block):
 
     @staticmethod
     def mute_user(credentials: TwitterCredentials, target_user_id: str):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         client.mute(target_user_id=target_user_id, user_auth=False)
 

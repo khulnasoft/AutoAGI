@@ -109,9 +109,7 @@ class TwitterGetTweetBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
         params = {"id": tweet_id, "user_auth": False}
 
         # Adding expansions to params If required by the user
@@ -155,7 +153,6 @@ class TwitterGetTweetBlock(Block):
         **kwargs,
     ) -> BlockOutput:
         try:
-
             tweet_data, included, meta, user_id, user_name = self.get_tweet(
                 credentials,
                 input_data.tweet_id,
@@ -271,9 +268,7 @@ class TwitterGetTweetsBlock(Block):
         tweet_fields: TweetFieldsFilter | None,
         user_fields: TweetUserFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
         params = {"ids": tweet_ids, "user_auth": False}
 
         # Adding expansions to params If required by the user

@@ -216,9 +216,7 @@ class TwitterGetPinnedListsBlock(Block):
         user_fields: TweetUserFieldsFilter | None,
         list_fields: ListFieldsFilter | None,
     ):
-        client = tweepy.Client(
-            bearer_token=credentials.access_token.get_secret_value()
-        )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
         params = {"user_auth": False}
 
