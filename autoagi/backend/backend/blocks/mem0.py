@@ -117,7 +117,7 @@ class AddMemoryBlock(Block, Mem0Base):
         user_id: str,
         graph_id: str,
         graph_exec_id: str,
-        **kwargs
+        **kwargs,
     ) -> BlockOutput:
         try:
             client = self._get_client(credentials)
@@ -214,7 +214,7 @@ class SearchMemoryBlock(Block, Mem0Base):
         user_id: str,
         graph_id: str,
         graph_exec_id: str,
-        **kwargs
+        **kwargs,
     ) -> BlockOutput:
         try:
             client = self._get_client(credentials)
@@ -294,7 +294,7 @@ class GetAllMemoriesBlock(Block, Mem0Base):
         user_id: str,
         graph_id: str,
         graph_exec_id: str,
-        **kwargs
+        **kwargs,
     ) -> BlockOutput:
         try:
             client = self._get_client(credentials)

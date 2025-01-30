@@ -54,7 +54,6 @@ async def check_media_exists(user_id: str, filename: str) -> str | None:
 async def upload_media(
     user_id: str, file: fastapi.UploadFile, use_file_name: bool = False
 ) -> str:
-
     # Get file content for deeper validation
     try:
         content = await file.read(1024)  # Read first 1KB for validation
@@ -68,7 +67,7 @@ async def upload_media(
     # Validate file signature/magic bytes
     if file.content_type in ALLOWED_IMAGE_TYPES:
         # Check image file signatures
-        if content.startswith(b"\xFF\xD8\xFF"):  # JPEG
+        if content.startswith(b"\xff\xd8\xff"):  # JPEG
             if file.content_type != "image/jpeg":
                 raise backend.server.v2.store.exceptions.InvalidFileTypeError(
                     "File signature does not match content type"

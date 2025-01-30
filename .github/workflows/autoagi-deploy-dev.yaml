@@ -44,7 +44,7 @@ jobs:
       - name: Trigger deploy workflow
         uses: peter-evans/repository-dispatch@v3
         with:
-          token: ${{ secrets.DEPLOY_TOKEN }}
+          token: ${{ secrets.ORG_REPO_TOKEN }}
           repository: KhulnaSoft/AutoAGI_cloud_infrastructure
           event-type: build_deploy_dev
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repository": "${{ github.repository }}"}'

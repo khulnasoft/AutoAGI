@@ -148,7 +148,6 @@ class UserCreditBase(ABC):
     async def _enable_transaction(
         self, transaction_key: str, user_id: str, metadata: Json
     ):
-
         transaction = await CreditTransaction.prisma().find_first_or_raise(
             where={"transactionKey": transaction_key, "userId": user_id}
         )
@@ -209,7 +208,6 @@ class UserCreditBase(ABC):
 
 
 class UserCredit(UserCreditBase):
-
     def _block_usage_cost(
         self,
         block: Block,

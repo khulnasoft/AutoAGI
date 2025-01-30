@@ -54,17 +54,11 @@ class TwitterHideReplyBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        try:
-            client = tweepy.Client(
-                bearer_token=credentials.access_token.get_secret_value()
-            )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
-            client.hide_reply(id=tweet_id, user_auth=False)
+        client.hide_reply(id=tweet_id, user_auth=False)
 
-            return True
-
-        except tweepy.TweepyException:
-            raise
+        return True
 
     def run(
         self,
@@ -125,17 +119,11 @@ class TwitterUnhideReplyBlock(Block):
         credentials: TwitterCredentials,
         tweet_id: str,
     ):
-        try:
-            client = tweepy.Client(
-                bearer_token=credentials.access_token.get_secret_value()
-            )
+        client = tweepy.Client(bearer_token=credentials.access_token.get_secret_value())
 
-            client.unhide_reply(id=tweet_id, user_auth=False)
+        client.unhide_reply(id=tweet_id, user_auth=False)
 
-            return True
-
-        except tweepy.TweepyException:
-            raise
+        return True
 
     def run(
         self,

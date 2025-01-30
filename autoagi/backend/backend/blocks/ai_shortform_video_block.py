@@ -211,7 +211,10 @@ class AIShortformVideoCreatorBlock(Block):
                     "https://webhook.site/test_uuid",
                 ),
                 "create_video": lambda api_key, payload: {"pid": "test_pid"},
-                "wait_for_video": lambda api_key, pid, webhook_token, max_wait_time=1000: "https://example.com/video.mp4",
+                "wait_for_video": lambda api_key,
+                pid,
+                webhook_token,
+                max_wait_time=1000: "https://example.com/video.mp4",
             },
             test_credentials=TEST_CREDENTIALS,
         )

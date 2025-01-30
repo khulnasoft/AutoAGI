@@ -195,7 +195,7 @@ async def configure_user_auto_top_up(
     dependencies=[Depends(auth_middleware)],
 )
 async def get_user_auto_top_up(
-    user_id: Annotated[str, Depends(get_user_id)]
+    user_id: Annotated[str, Depends(get_user_id)],
 ) -> AutoTopUpConfig:
     return await get_auto_top_up(user_id)
 
@@ -255,7 +255,7 @@ class DeleteGraphResponse(TypedDict):
 
 @v1_router.get(path="/graphs", tags=["graphs"], dependencies=[Depends(auth_middleware)])
 async def get_graphs(
-    user_id: Annotated[str, Depends(get_user_id)]
+    user_id: Annotated[str, Depends(get_user_id)],
 ) -> Sequence[graph_db.GraphModel]:
     return await graph_db.get_graphs(filter_by="active", user_id=user_id)
 
@@ -547,7 +547,7 @@ async def get_graph_run_node_execution_results(
     dependencies=[Depends(auth_middleware)],
 )
 async def get_templates(
-    user_id: Annotated[str, Depends(get_user_id)]
+    user_id: Annotated[str, Depends(get_user_id)],
 ) -> Sequence[graph_db.GraphModel]:
     return await graph_db.get_graphs(filter_by="template", user_id=user_id)
 
@@ -677,7 +677,7 @@ async def create_api_key(
     dependencies=[Depends(auth_middleware)],
 )
 async def get_api_keys(
-    user_id: Annotated[str, Depends(get_user_id)]
+    user_id: Annotated[str, Depends(get_user_id)],
 ) -> list[APIKeyWithoutHash]:
     """List all API keys for the user"""
     try:

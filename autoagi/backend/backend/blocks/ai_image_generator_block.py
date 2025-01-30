@@ -161,7 +161,8 @@ class AIImageGeneratorBlock(Block):
                 ),
             ],
             test_mock={
-                "_run_client": lambda *args, **kwargs: "https://replicate.delivery/generated-image.webp"
+                "_run_client": lambda *args,
+                **kwargs: "https://replicate.delivery/generated-image.webp"
             },
         )
 

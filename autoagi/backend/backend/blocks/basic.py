@@ -341,8 +341,11 @@ class AgentOutputBlock(Block):
         """
         if input_data.format:
             try:
-                yield "output", formatter.format_string(
-                    input_data.format, {input_data.name: input_data.value}
+                yield (
+                    "output",
+                    formatter.format_string(
+                        input_data.format, {input_data.name: input_data.value}
+                    ),
                 )
             except Exception as e:
                 yield "output", f"Error: {e}, {input_data.value}"

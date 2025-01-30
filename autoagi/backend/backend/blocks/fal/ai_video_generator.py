@@ -60,7 +60,8 @@ class AIVideoGeneratorBlock(Block):
             test_credentials=TEST_CREDENTIALS,
             test_output=[("video_url", "https://fal.media/files/example/video.mp4")],
             test_mock={
-                "generate_video": lambda *args, **kwargs: "https://fal.media/files/example/video.mp4"
+                "generate_video": lambda *args,
+                **kwargs: "https://fal.media/files/example/video.mp4"
             },
         )
 

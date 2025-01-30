@@ -536,16 +536,19 @@ class AIStructuredResponseGeneratorBlock(AIBlockBase):
                 if input_data.expected_format:
                     parsed_dict, parsed_error = parse_response(response_text)
                     if not parsed_error:
-                        yield "response", {
-                            k: (
-                                json.loads(v)
-                                if isinstance(v, str)
-                                and v.startswith("[")
-                                and v.endswith("]")
-                                else (", ".join(v) if isinstance(v, list) else v)
-                            )
-                            for k, v in parsed_dict.items()
-                        }
+                        yield (
+                            "response",
+                            {
+                                k: (
+                                    json.loads(v)
+                                    if isinstance(v, str)
+                                    and v.startswith("[")
+                                    and v.endswith("]")
+                                    else (", ".join(v) if isinstance(v, list) else v)
+                                )
+                                for k, v in parsed_dict.items()
+                            },
+                        )
                         yield "prompt", self.prompt
                         return
                 else:
@@ -836,9 +839,7 @@ class AITextSummarizerBlock(AIBlockBase):
                     chunk_overlap=input_data.chunk_overlap,
                 ),
                 credentials=credentials,
-            ).send(None)[
-                1
-            ]  # Get the first yielded value
+            ).send(None)[1]  # Get the first yielded value
 
 
 class AIConversationBlock(AIBlockBase):
@@ -899,7 +900,8 @@ class AIConversationBlock(AIBlockBase):
                 ("prompt", str),
             ],
             test_mock={
-                "llm_call": lambda *args, **kwargs: "The 2020 World Series was played at Globe Life Field in Arlington, Texas."
+                "llm_call": lambda *args,
+                **kwargs: "The 2020 World Series was played at Globe Life Field in Arlington, Texas."
             },
         )
 

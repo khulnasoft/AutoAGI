@@ -43,7 +43,7 @@ class Slant3DBlockBase(Block):
             raise ValueError(
                 f"""Invalid color profile combination {color_tag}.
 Valid colors for {profile.value} are:
-{','.join([filament['colorTag'].replace(profile.value.lower(), '') for filament in response['filaments'] if filament['profile'] == profile.value])}
+{",".join([filament["colorTag"].replace(profile.value.lower(), "") for filament in response["filaments"] if filament["profile"] == profile.value])}
 """
             )
         return color_tag
