@@ -1,0 +1,45 @@
+{
+    "folders": [
+      {
+        "name": "frontend",
+        "path": "../autoagi/frontend"
+      },
+      {
+        "name": "backend",
+        "path": "../autoagi/backend"
+      },
+      {
+        "name": "market",
+        "path": "../autoagi/market"
+      },
+      {
+        "name": "lib",
+        "path": "../autoagi/autoagi_libs"
+      },
+      {
+        "name": "infra",
+        "path": "../autoagi/infra"
+      },
+      {
+        "name": "docs",
+        "path": "../docs"
+      },
+      {
+        "name": "[root]",
+        "path": ".."
+      }
+    ],
+    "settings": {
+      "python.analysis.typeCheckingMode": "basic"
+    },
+    "extensions": {
+      "recommendations": [
+        "charliermarsh.ruff",
+        "dart-code.flutter",
+        "ms-python.black-formatter",
+        "ms-python.vscode-pylance",
+        "prisma.prisma",
+        "qwtel.sqlite-viewer"
+      ]
+    }
+  }

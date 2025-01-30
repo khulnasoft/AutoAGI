@@ -4,7 +4,6 @@ auto_agi_workspace/*
 *.mpeg
 .env
 azure.yaml
-.vscode
 .idea/*
 auto-gpt.json
 log.txt
