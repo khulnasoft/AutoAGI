@@ -16,6 +16,8 @@ updates:
         update-types:
         - "minor"
         - "patch"
+      security-updates: true
+      security-advisories: true
       development-dependencies:
         dependency-type: "development"
         update-types:
