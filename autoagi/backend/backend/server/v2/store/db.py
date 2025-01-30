@@ -427,10 +427,10 @@ async def create_store_submission(
     slug: str,
     name: str,
     video_url: str | None = None,
-    image_urls: list[str] = [],
+    image_urls: list[str] = None,
     description: str = "",
     sub_heading: str = "",
-    categories: list[str] = [],
+    categories: list[str] = None,
 ) -> backend.server.v2.store.model.StoreSubmission:
     """
     Create a new store listing submission.
@@ -449,6 +449,10 @@ async def create_store_submission(
     Returns:
         StoreSubmission: The created store submission
     """
+    if image_urls is None:
+        image_urls = []
+    if categories is None:
+        categories = []
     logger.debug(
         f"Creating store submission for user {user_id}, agent {agent_id} v{agent_version}"
     )

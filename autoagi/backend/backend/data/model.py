@@ -330,7 +330,7 @@ class _CredentialsFieldSchemaExtra(BaseModel, Generic[CP, CT]):
 
 
 def CredentialsField(
-    required_scopes: set[str] = set(),
+    required_scopes: set[str] = None,
     *,
     discriminator: Optional[str] = None,
     discriminator_mapping: Optional[dict[str, Any]] = None,
@@ -342,6 +342,8 @@ def CredentialsField(
     `CredentialsField` must and can only be used on fields named `credentials`.
     This is enforced by the `BlockSchema` base class.
     """
+    if required_scopes is None:
+        required_scopes = set()
 
     field_schema_extra = {
         k: v

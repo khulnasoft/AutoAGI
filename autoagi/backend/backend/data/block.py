@@ -250,7 +250,7 @@ class Block(ABC, Generic[BlockSchemaInputType, BlockSchemaOutputType]):
         self,
         id: str = "",
         description: str = "",
-        contributors: list[ContributorDetails] = [],
+        contributors: list[ContributorDetails] = None,
         categories: set[BlockCategory] | None = None,
         input_schema: Type[BlockSchemaInputType] = EmptySchema,
         output_schema: Type[BlockSchemaOutputType] = EmptySchema,
@@ -280,6 +280,8 @@ class Block(ABC, Generic[BlockSchemaInputType, BlockSchemaOutputType]):
             disabled: If the block is disabled, it will not be available for execution.
             static_output: Whether the output links of the block are static by default.
         """
+        if contributors is None:
+            contributors = []
         self.id = id
         self.input_schema = input_schema
         self.output_schema = output_schema

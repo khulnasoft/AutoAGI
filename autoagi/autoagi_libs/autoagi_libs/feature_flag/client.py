@@ -145,11 +145,13 @@ def percentage_rollout(
 
 def beta_feature(
     flag_key: Optional[str] = None,
-    unauthorized_response: Any = {"message": "Not available in beta"},
+    unauthorized_response: Any = None,
 ) -> Callable[
     [Callable[P, Union[T, Awaitable[T]]]], Callable[P, Union[T, Awaitable[T]]]
 ]:
     """Decorator for beta features."""
+    if unauthorized_response is None:
+        unauthorized_response = {"message": "Not available in beta"}
     actual_key = f"beta-{flag_key}" if flag_key else "beta"
     return feature_flag(actual_key, False)
 
