@@ -1,0 +1,5 @@
+# Netlify config for AutoAGI docs
+
+[build]
+  publish = "public/"
+  command = "mkdocs build -d public"

@@ -1,0 +1,3 @@
+[submodule "autoagi/supabase"]
+	path = autoagi/supabase
+	url = https://github.com/supabase/supabase.git

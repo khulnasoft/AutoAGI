@@ -1,0 +1,16 @@
+documentation:
+- changed-files:
+  - any-glob-to-any-file: docs/**
+
+platform/frontend:
+- changed-files:
+  - any-glob-to-any-file: autoagi/frontend/**
+
+platform/backend:
+- changed-files:
+  - any-glob-to-any-file: autoagi/backend/**
+  - all-globs-to-all-files: '!autoagi/backend/backend/blocks/**'
+
+platform/blocks:
+- changed-files:
+  - any-glob-to-any-file: autoagi/backend/backend/blocks/**

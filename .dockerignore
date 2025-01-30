@@ -1,0 +1,39 @@
+# Ignore everything by default, selectively add things to context
+*
+
+# Platform - Libs
+!autoagi/autoagi_libs/autoagi_libs/
+!autoagi/autoagi_libs/pyproject.toml
+!autoagi/autoagi_libs/poetry.lock
+!autoagi/autoagi_libs/README.md
+
+# Platform - Backend
+!autoagi/backend/backend/
+!autoagi/backend/migrations/
+!autoagi/backend/schema.prisma
+!autoagi/backend/pyproject.toml
+!autoagi/backend/poetry.lock
+!autoagi/backend/README.md
+
+# Platform - Market
+!autoagi/market/market/
+!autoagi/market/scripts.py
+!autoagi/market/schema.prisma
+!autoagi/market/pyproject.toml
+!autoagi/market/poetry.lock
+!autoagi/market/README.md
+
+# Platform - Frontend
+!autoagi/frontend/src/
+!autoagi/frontend/public/
+!autoagi/frontend/package.json
+!autoagi/frontend/yarn.lock
+!autoagi/frontend/tsconfig.json
+!autoagi/frontend/README.md
+## config
+!autoagi/frontend/*.config.*
+!autoagi/frontend/.env.*
+
+# Explicitly re-ignore some folders
+.*
+**/__pycache__

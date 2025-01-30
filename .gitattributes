@@ -1,0 +1,5 @@
+**/poetry.lock linguist-generated
+
+docs/_javascript/** linguist-vendored
+
+* text=auto
